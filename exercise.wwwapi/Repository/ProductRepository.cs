@@ -5,6 +5,11 @@ namespace exercise.wwwapi.Repository
 {
     public class ProductRepository : IProductRepository
     {
+        DataContext _db;
+        public ProductRepository(DataContext db)
+        {
+            _db = db;
+        }
         public Product AddProduct(Product product)
         {
             return ProductCollection.AddProduct(product);
