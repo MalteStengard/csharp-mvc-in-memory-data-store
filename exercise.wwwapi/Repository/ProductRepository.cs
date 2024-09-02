@@ -22,7 +22,8 @@ namespace exercise.wwwapi.Repository
         {
             //return ProductCollection.DeleteProduct(id);
             var product = _db.Products.FirstOrDefault(p => p.Id == id) as Product;
-           _db.Remove(product);
+           _db.Products.Remove(product);
+            _db.SaveChanges();
             return product;
 
         }
